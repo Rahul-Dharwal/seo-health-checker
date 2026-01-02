@@ -1,0 +1,12 @@
+{
+    "name": "SEO Health Checker",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "customizations": {
+        "codespaces": {
+            "openFiles": ["app.py"]
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    "waitFor": "postCreateCommand",
+    "updateContentCommand": "python3 -m streamlit run app.py --server.port 8501 --server.address 0.0.0.0"
+}
