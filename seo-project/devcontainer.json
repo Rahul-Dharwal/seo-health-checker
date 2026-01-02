@@ -1,12 +1,12 @@
 {
     "name": "SEO Health Checker",
     "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "postCreateCommand": "pip install -r requirements.txt",
     "customizations": {
         "codespaces": {
             "openFiles": ["app.py"]
         }
     },
-    "postCreateCommand": "pip install -r requirements.txt",
-    "waitFor": "postCreateCommand",
-    "updateContentCommand": "python3 -m streamlit run app.py --server.port 8501 --server.address 0.0.0.0"
+    // This line runs the app as soon as the user enters the codespace
+    "postStartCommand": "python3 -m streamlit run app.py --server.port 8501 --server.address 0.0.0.0"
 }
